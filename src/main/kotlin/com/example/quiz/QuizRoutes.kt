@@ -8,7 +8,7 @@ import io.ktor.server.routing.*
 
 fun Route.quizRouting() {
     val quizController: QuizController = Inject.get()
-    route(Routes.quiz) {
+    route(Routes.Quiz) {
         get {
             quizController.getAll(call)
         }

@@ -1,3 +1,5 @@
+import java.util.regex.Pattern.compile
+
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
@@ -22,7 +24,6 @@ repositories {
     mavenCentral()
     maven {
         url = uri("https://maven.pkg.jetbrains.space/public/p/ktor/eap")
-        url = uri("https://jitpack.io")
     }
 }
 
@@ -34,7 +35,6 @@ dependencies {
     implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.insert-koin:koin-ktor:$koin_version")
-    implementation("com.github.papsign:Ktor-OpenAPI-Generator:-SNAPSHOT")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 }

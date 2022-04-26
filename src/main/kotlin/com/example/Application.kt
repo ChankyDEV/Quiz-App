@@ -14,6 +14,7 @@ fun main(args: Array<String>) {
 @Suppress("unused")
 fun Application.module() {
     Inject.create(listOf(quizAppModule))
+
     configureRouting()
     configureSerialization()
 }

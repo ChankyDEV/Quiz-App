@@ -1,5 +1,6 @@
 package com.example.common
 
 object Routes {
-    const val quiz: String = "quiz"
+    const val Quiz: String = "quiz"
+    const val Api: String = "api"
 }
