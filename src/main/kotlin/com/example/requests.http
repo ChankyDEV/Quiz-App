@@ -1,0 +1,39 @@
+GET http://localhost:8080/quiz
+Accept: application/json
+
+###
+
+GET http://localhost:8080/quiz/6
+Accept: application/json
+
+###
+
+POST http://localhost:8080/quiz
+Accept: application/json
+Content-Type: application/json
+
+{
+    "questions": [
+      {
+        "question": "5 + 5 = ?",
+        "answers": [
+          {
+            "description": "10",
+            "correct": true
+          },
+          {
+            "description": "15",
+            "correct": false
+          },
+           {
+            "description": "0",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  }
+
+###
+
+
