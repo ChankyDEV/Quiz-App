@@ -1,5 +1,6 @@
 package com.example
 
+import com.example.plugins.configureDatabase
 import com.example.plugins.configureKoin
 import com.example.plugins.configureRouting
 import com.example.plugins.configureSerialization
@@ -11,7 +12,8 @@ fun main(args: Array<String>) {
 
 @Suppress("unused")
 fun Application.module() {
-    configureKoin()
+    val db = configureDatabase()
+    configureKoin(db)
     configureRouting()
     configureSerialization()
 }

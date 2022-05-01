@@ -12,7 +12,7 @@ class QuizController(private val quizService: QuizService) {
     suspend fun getAll(call: ApplicationCall) {
         request(call) {
             val quizes = quizService.getAll()
-            it.ok(quizes)
+            it.ok(quizes.map { quiz -> quiz.toResponse() })
         }
     }
 
@@ -20,7 +20,7 @@ class QuizController(private val quizService: QuizService) {
         request(call) {
             val id = it.parameters["id"]?.toInt() ?: throw BadRequestException(Messages.BadRequest)
             val quiz = quizService.getOne(id)
-            it.ok(quiz)
+            it.ok(quiz.toResponse())
         }
     }
 

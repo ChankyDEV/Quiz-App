@@ -3,7 +3,8 @@ import java.util.regex.Pattern.compile
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
-val koin_version = "3.1.6"
+val koin_version: String by project
+val ktorm_version: String by project
 
 plugins {
     kotlin("jvm") version "1.6.21"
@@ -27,6 +28,9 @@ repositories {
 dependencies {
     compile("io.insert-koin:koin-core:$koin_version")
     compile("io.insert-koin:koin-ktor:$koin_version")
+    compile("org.ktorm:ktorm-core:${ktorm_version}")
+    implementation("org.ktorm:ktorm-core:${ktorm_version}")
+    implementation("org.postgresql:postgresql:42.3.4")
     implementation("io.insert-koin:koin-core:$koin_version")
     testImplementation("io.insert-koin:koin-test:$koin_version")
     implementation("io.insert-koin:koin-ktor:$koin_version")
